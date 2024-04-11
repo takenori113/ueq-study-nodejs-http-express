@@ -1,12 +1,10 @@
 import { test, expect } from "@playwright/test";
-import { ChildProcessWithoutNullStreams } from "child_process";
-
-import { startServer } from "./utils";
+import { ChildProcessWithoutNullStreams, spawn } from "child_process";
 
 let serverProcess: ChildProcessWithoutNullStreams;
 
-test.beforeAll("setup", async () => {
-  serverProcess = await startServer(["./http.js"]);
+test.beforeAll("setup", () => {
+  serverProcess = spawn("node", ["./http.js"]);
 });
 
 test.afterAll("teardown", () => {
