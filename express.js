@@ -15,6 +15,6 @@ app.get('/hello', (req, res) => {
 app.use(express.static('public'));
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server running at http://localhost:3001/${port}`)
 });
 // expressでWebサーバーを実装
