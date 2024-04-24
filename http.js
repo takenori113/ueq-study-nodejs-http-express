@@ -1,7 +1,7 @@
+import { createServer } from 'node:http';
 const hostname = "localhost";
 const port = 3000;
-import { createServer } from 'node:http';
-var server = createServer(
+const server = createServer(
   (request,response)=>{
     response.setHeader('Content-Type','text/plain');
     response.end('Hello World')
